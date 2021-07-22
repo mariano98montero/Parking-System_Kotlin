@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TitleStyleMainActivity">
+        <item name="android:shadowColor">@color/black</item>
+        <item name="android:shadowDx">@integer/text_main_activity_shadow_dx</item>
+        <item name="android:shadowDy">@integer/text_main_activity_shadow_dy</item>
+        <item name="android:shadowRadius">@integer/text_main_activity_shadow_radius</item>
+        <item name="android:textColor">@color/text_main_activity_title_cream</item>
+        <item name="android:textSize">@dimen/text_main_activity_text_size</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="TitleStyleDialogFragmentSpacesSetting">
+        <item name="android:textSize">@dimen/text_dialog_fragment_spaces_setting_text_size</item>
+        <item name="android:layout_marginTop">@dimen/edit_text_dialog_fragment_spaces_setting_margin_top</item>
+    </style>
+
+    <style name="InputStyleDialogFragmentSpacesSetting">
+        <item name="android:inputType">number</item>
+        <item name="android:layout_margin">@dimen/text_edit_dialog_fragment_spaces_setting_margin</item>
+    </style>
+
+    <style name="ButtonStyleDialogFragmentSpacesSetting">
+        <item name="android:layout_marginBottom">@dimen/button_dialog_fragment_spaces_setting_margin_bottom</item>
+        <item name="android:text">@string/dialog_fragment_confirm_button</item>
+    </style>
+</resources>
