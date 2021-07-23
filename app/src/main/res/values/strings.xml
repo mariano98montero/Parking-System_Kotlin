@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Parking_System_Kotlin</string>
+    <string name="app_name">ParkingSystemKotlin</string>
+    <string name="main_activity_text_title">Welcome to free Spot!</string>
+    <string name="main_activity_button_set_size">Set Parking spaces</string>
+    <string name="main_activity_toast_set_parking_lots">%1$s free spots.</string>
+    <string name="dialog_fragment_toast_invalid_value">please insert a valid number</string>
+    <string name="dialog_fragment_confirm_button">Confirm</string>
+    <string name="dialog_fragment_title_text">Set spaces available:</string>
 </resources>
