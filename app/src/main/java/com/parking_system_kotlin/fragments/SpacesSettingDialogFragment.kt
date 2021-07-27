@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import com.parking_system_kotlin.listeners.ListenerSetParkingDialogFragment
 import com.parking_system_kotlin.mvp.contracts.ParkingSpacesSettingContract
 import com.parking_system_kotlin.mvp.presenter.ParkingSpacesSettingPresenter
 import com.parking_system_kotlin.mvp.view.ParkingSpacesSettingView
 import com.parking_system_kotlin.utils.Constants
 import com.parkingsystemkotlin.databinding.DialogFragmentParkingSpacesSettingBinding
-import com.parking_system_kotlin.listeners.ListenerSetParkingDialogFragment
 
 class SpacesSettingDialogFragment : DialogFragment() {
     private lateinit var presenter: ParkingSpacesSettingContract.ParkingSpacesSettingDialogFragmentPresenter
