@@ -2,6 +2,7 @@ package com.parking_system_kotlin.mvp.view
 
 import android.app.Activity
 import android.widget.Toast
+import com.parking_system_kotlin.activities.ReservationActivity
 import com.parking_system_kotlin.fragments.SpacesSettingDialogFragment
 import com.parking_system_kotlin.listeners.ListenerSetParkingDialogFragment
 import com.parking_system_kotlin.mvp.contracts.ParkingContract
@@ -21,6 +22,15 @@ class ParkingView(activity: Activity) : ActivityView(activity), ParkingContract.
         context?.let {
             Toast.makeText(it, it?.getString(R.string.main_activity_toast_set_parking_lots, parkingLots), Toast.LENGTH_LONG)
                 .show()
+        }
+    }
+
+    override fun showReservationActivity() {
+        activity?.let { activity ->
+            context?.let {
+                val intent = ReservationActivity.newInstance(it)
+                activity.startActivity(intent)
+            }
         }
     }
 }

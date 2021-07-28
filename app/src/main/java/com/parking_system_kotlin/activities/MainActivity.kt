@@ -2,12 +2,12 @@ package com.parking_system_kotlin.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.parking_system_kotlin.listeners.ListenerSetParkingDialogFragment
 import com.parking_system_kotlin.mvp.contracts.ParkingContract
 import com.parking_system_kotlin.mvp.model.ParkingModel
 import com.parking_system_kotlin.mvp.presenter.ParkingPresenter
 import com.parking_system_kotlin.mvp.view.ParkingView
 import com.parkingsystemkotlin.databinding.ActivityMainBinding
-import com.parking_system_kotlin.listeners.ListenerSetParkingDialogFragment
 
 class MainActivity : AppCompatActivity(), ListenerSetParkingDialogFragment {
     private lateinit var presenter: ParkingContract.MainActivityPresenter
@@ -24,7 +24,10 @@ class MainActivity : AppCompatActivity(), ListenerSetParkingDialogFragment {
     }
 
     private fun setListeners() {
-        binding.buttonMainActivitySelectParkingSpace.setOnClickListener { presenter.onSetParkingButtonPressed(this) }
+        with(binding) {
+            buttonMainActivitySelectParkingSpace.setOnClickListener { presenter.onSetParkingButtonPressed(this@MainActivity) }
+            buttonMainActivityReservation.setOnClickListener { presenter.onReservationButtonPressed() }
+        }
     }
 
     override fun listenFreeSpaces(freeSpaces: String) {

@@ -12,7 +12,7 @@ class ParkingSpacesSettingView(fragment: SpacesSettingDialogFragment) : Fragment
 
     override fun showParkingLotsAvailable(parkingLots: String, listenerSetParkingDialogFragment: ListenerSetParkingDialogFragment) {
         val fragment: SpacesSettingDialogFragment = fragment as SpacesSettingDialogFragment
-        fragment?.dismiss()
+        fragment.dismiss()
         listenerSetParkingDialogFragment.listenFreeSpaces(parkingLots)
     }
 

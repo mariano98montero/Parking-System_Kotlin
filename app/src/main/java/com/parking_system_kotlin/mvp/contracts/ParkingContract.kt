@@ -12,10 +12,12 @@ interface ParkingContract {
     interface MainActivityPresenter {
         fun onSetParkingButtonPressed(listenerSetParkingDialogFragment: ListenerSetParkingDialogFragment)
         fun setParkingSpacesAvailable(spacesAvailable: String)
+        fun onReservationButtonPressed()
     }
 
     interface MainActivityView {
         fun showDialogFragment(listenerSetParkingDialogFragment: ListenerSetParkingDialogFragment)
         fun showParkingLotsAvailable(parkingLots: String)
+        fun showReservationActivity()
     }
 }

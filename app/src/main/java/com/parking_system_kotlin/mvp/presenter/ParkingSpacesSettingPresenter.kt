@@ -3,9 +3,8 @@ package com.parking_system_kotlin.mvp.presenter
 import com.parking_system_kotlin.listeners.ListenerSetParkingDialogFragment
 import com.parking_system_kotlin.mvp.contracts.ParkingSpacesSettingContract
 
-class ParkingSpacesSettingPresenter(view: ParkingSpacesSettingContract.ParkingSpacesSettingDialogFragmentView) :
+class ParkingSpacesSettingPresenter(private val view: ParkingSpacesSettingContract.ParkingSpacesSettingDialogFragmentView) :
     ParkingSpacesSettingContract.ParkingSpacesSettingDialogFragmentPresenter {
-    private var view: ParkingSpacesSettingContract.ParkingSpacesSettingDialogFragmentView = view
 
     override fun onButtonDialogFragmentSpacesSettingConfirmationPressed(
         freeSpaces: String,
