@@ -15,9 +15,9 @@ fun Calendar.getStringFromDate(): String {
     return inActiveDate
 }
 
-fun String.getCalendarFromString(): Calendar? {
+fun String.getCalendarFromString(): Calendar {
+    val calendar = Calendar.getInstance()
     if (this.isNotEmpty()) {
-        val calendar = Calendar.getInstance()
         val date: Date
         try {
             val date = SimpleDateFormat(Constants.DATE_FORMAT).parse(this)
@@ -25,7 +25,6 @@ fun String.getCalendarFromString(): Calendar? {
         } catch (e: ParseException) {
             e.printStackTrace()
         }
-        return calendar
     }
-    return null
+    return calendar
 }

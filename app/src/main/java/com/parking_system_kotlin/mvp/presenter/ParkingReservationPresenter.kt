@@ -1,11 +1,15 @@
 package com.parking_system_kotlin.mvp.presenter
 
+import com.parking_system_kotlin.entity.Reservation
 import com.parking_system_kotlin.listeners.ListenerDateTime
 import com.parking_system_kotlin.mvp.contracts.ParkingReservationContract
 import com.parking_system_kotlin.utils.getStringFromDate
 import java.util.Calendar
 
-class ParkingReservationPresenter(private val view: ParkingReservationContract.ParkingReservationView) :
+class ParkingReservationPresenter(
+    private val model: ParkingReservationContract.ParkingReservationModel,
+    private val view: ParkingReservationContract.ParkingReservationView
+) :
     ParkingReservationContract.ParkingReservationPresenter {
 
     override fun showDatePicker(listenerDateTime: ListenerDateTime, dateSelector: Boolean) {
@@ -20,7 +24,12 @@ class ParkingReservationPresenter(private val view: ParkingReservationContract.P
         view.showExitDateSelected(exitDate.getStringFromDate())
     }
 
-    override fun saveReservation() {
-        view.closeScreen()
+    override fun saveReservation(reservation: Reservation, parkingLot: String) {
+        if (parkingLot.isNotEmpty()) {
+            model.addReservation(reservation, parkingLot)
+            view.showConfirmationMessage()
+            view.closeScreen()
+        } else
+            view.showErrorMessage()
     }
 }

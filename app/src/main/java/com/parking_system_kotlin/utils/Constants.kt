@@ -8,4 +8,5 @@ object Constants {
     const val DIALOG_FRAGMENT_ENTRY_DATE_PICKER: String = "DIALOG_FRAGMENT_ENTRY_DATE_PICKER"
     const val DATE_FORMAT = "dd-MMM-yyyy a hh:mm"
     const val EMPTY_STRING = ""
+    const val ZERO = 0
 }
