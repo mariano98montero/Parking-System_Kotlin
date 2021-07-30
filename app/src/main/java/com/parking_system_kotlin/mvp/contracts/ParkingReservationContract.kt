@@ -11,7 +11,7 @@ interface ParkingReservationContract {
         fun showDatePicker(listenerDateTime: ListenerDateTime, dateSelector: Boolean)
         fun setEntryDate(entryDate: Calendar)
         fun setExitDate(exitDate: Calendar)
-        fun saveReservation(reservation: Reservation, parkingLot: String)
+        fun saveReservation()
     }
 
     interface ParkingReservationView {
@@ -21,6 +21,8 @@ interface ParkingReservationContract {
         fun showConfirmationMessage()
         fun showErrorMessage()
         fun closeScreen()
+        fun getDataForReservation(): Reservation
+        fun getParkingLotSelected(): String
     }
 
     interface ParkingReservationModel {

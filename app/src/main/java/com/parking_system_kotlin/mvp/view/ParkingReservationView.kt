@@ -2,6 +2,7 @@ package com.parking_system_kotlin.mvp.view
 
 import android.app.Activity
 import android.widget.Toast
+import com.parking_system_kotlin.entity.Reservation
 import com.parking_system_kotlin.fragments.DateReservationDialogFragment
 import com.parking_system_kotlin.listeners.ListenerDateTime
 import com.parking_system_kotlin.mvp.contracts.ParkingReservationContract
@@ -45,4 +46,14 @@ class ParkingReservationView(activity: Activity, private val binding: ActivityRe
     override fun closeScreen() {
         activity?.finish()
     }
+
+    override fun getDataForReservation(): Reservation {
+        return Reservation(
+            binding.editTextReservationActivityEntry.text.toString(),
+            binding.editTextReservationActivityExit.text.toString(),
+            binding.editTextReservationActivityCode.text.toString()
+        )
+    }
+
+    override fun getParkingLotSelected() = binding.editTextReservationActivityParkingNumber.text.toString()
 }

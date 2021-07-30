@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.parking_system_kotlin.entity.Reservation
 import com.parking_system_kotlin.listeners.ListenerDateTime
 import com.parking_system_kotlin.mvp.contracts.ParkingReservationContract
 import com.parking_system_kotlin.mvp.model.ParkingReservationModel
@@ -31,20 +30,8 @@ class ReservationActivity : AppCompatActivity(), ListenerDateTime {
         with(binding) {
             editTextReservationActivityEntry.setOnClickListener { presenter.showDatePicker(this@ReservationActivity, true) }
             editTextReservationActivityExit.setOnClickListener { presenter.showDatePicker(this@ReservationActivity, false) }
-            buttonReservationActivitySave.setOnClickListener {
-                makeReservation()
-            }
+            buttonReservationActivitySave.setOnClickListener { presenter.saveReservation() }
         }
-    }
-
-    private fun makeReservation() {
-        presenter.saveReservation(
-            Reservation(
-                binding.editTextReservationActivityEntry.text.toString(),
-                binding.editTextReservationActivityExit.text.toString(),
-                binding.editTextReservationActivityCode.text.toString()
-                ), binding.editTextReservationActivityParkingNumber.text.toString()
-        )
     }
 
     override fun setEntryDate(entryDate: Calendar) {

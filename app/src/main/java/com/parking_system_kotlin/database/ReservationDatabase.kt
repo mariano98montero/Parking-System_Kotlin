@@ -3,17 +3,9 @@ package com.parking_system_kotlin.database
 import com.parking_system_kotlin.entity.Reservation
 import com.parking_system_kotlin.utils.Constants
 
-class ReservationDatabase {
-    private var instance: ReservationDatabase? = null
+object ReservationDatabase {
     private var reservations: HashMap<String, MutableList<Reservation>> = HashMap()
     private var parkingLots: String = Constants.EMPTY_STRING
-
-    fun getInstance(): ReservationDatabase {
-        if (instance == null) {
-            this.instance = ReservationDatabase()
-        }
-        return instance as ReservationDatabase
-    }
 
     fun getParkingLots() = parkingLots
 
