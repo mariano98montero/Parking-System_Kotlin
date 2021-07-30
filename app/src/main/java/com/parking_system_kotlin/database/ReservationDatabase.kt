@@ -5,13 +5,7 @@ import com.parking_system_kotlin.utils.Constants
 
 object ReservationDatabase {
     private var reservations: HashMap<String, MutableList<Reservation>> = HashMap()
-    private var parkingLots: String = Constants.EMPTY_STRING
-
-    fun getParkingLots() = parkingLots
-
-    fun setParkingLots(parkingLotSet: String) {
-        this.parkingLots = parkingLotSet
-    }
+    var parkingLots: String = Constants.EMPTY_STRING
 
     fun addReservation(reservation: Reservation, parkingLot: String) {
         if (reservations.isEmpty()) {

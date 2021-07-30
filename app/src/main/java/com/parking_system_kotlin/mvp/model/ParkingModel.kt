@@ -7,10 +7,10 @@ class ParkingModel : ParkingContract.MainActivityModel {
     private val database: ReservationDatabase = ReservationDatabase
 
     override fun setParkingLots(parkingLots: String) {
-        database.setParkingLots(parkingLots)
+        database.parkingLots = parkingLots
     }
 
     override fun getParkingLots(): String {
-        return database.getParkingLots()
+        return database.parkingLots
     }
 }

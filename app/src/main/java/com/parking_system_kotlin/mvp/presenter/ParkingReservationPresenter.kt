@@ -1,8 +1,10 @@
 package com.parking_system_kotlin.mvp.presenter
 
+import android.util.Log
 import com.parking_system_kotlin.entity.Reservation
 import com.parking_system_kotlin.listeners.ListenerDateTime
 import com.parking_system_kotlin.mvp.contracts.ParkingReservationContract
+import com.parking_system_kotlin.utils.getCalendarFromString
 import com.parking_system_kotlin.utils.getStringFromDate
 import java.util.Calendar
 
