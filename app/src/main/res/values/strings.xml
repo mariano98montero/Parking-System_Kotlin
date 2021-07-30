@@ -17,4 +17,6 @@
     <string name="reservation_activity_button_save_text">Save</string>
     <string name="dialog_fragment_date_picker_text_cancel">Cancel</string>
     <string name="dialog_fragment_date_picker_text_confirm">Confirm</string>
+    <string name="reservation_activity_text_confirmation_message">Your reservation has been confirmed successfully!</string>
+    <string name="reservation_activity_text_parking_lot_error_message">Please select a valid parking spot!</string>
 </resources>

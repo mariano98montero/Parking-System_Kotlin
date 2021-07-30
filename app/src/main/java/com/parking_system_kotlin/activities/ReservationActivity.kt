@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.parking_system_kotlin.listeners.ListenerDateTime
 import com.parking_system_kotlin.mvp.contracts.ParkingReservationContract
+import com.parking_system_kotlin.mvp.model.ParkingReservationModel
 import com.parking_system_kotlin.mvp.presenter.ParkingReservationPresenter
 import com.parking_system_kotlin.mvp.view.ParkingReservationView
 import com.parkingsystemkotlin.databinding.ActivityReservationBinding
@@ -20,7 +21,7 @@ class ReservationActivity : AppCompatActivity(), ListenerDateTime {
         super.onCreate(savedInstanceState)
         binding = ActivityReservationBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        presenter = ParkingReservationPresenter(ParkingReservationView(this, binding))
+        presenter = ParkingReservationPresenter(ParkingReservationModel(), ParkingReservationView(this, binding))
 
         setListeners()
     }
@@ -29,9 +30,7 @@ class ReservationActivity : AppCompatActivity(), ListenerDateTime {
         with(binding) {
             editTextReservationActivityEntry.setOnClickListener { presenter.showDatePicker(this@ReservationActivity, true) }
             editTextReservationActivityExit.setOnClickListener { presenter.showDatePicker(this@ReservationActivity, false) }
-            buttonReservationActivitySave.setOnClickListener {
-                presenter.saveReservation()
-            }
+            buttonReservationActivitySave.setOnClickListener { presenter.saveReservation() }
         }
     }
 
