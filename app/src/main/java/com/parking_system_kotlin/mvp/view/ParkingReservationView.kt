@@ -47,13 +47,11 @@ class ParkingReservationView(activity: Activity, private val binding: ActivityRe
         activity?.finish()
     }
 
-    override fun getDataForReservation(): Reservation {
-        return Reservation(
-            binding.editTextReservationActivityEntry.text.toString(),
-            binding.editTextReservationActivityExit.text.toString(),
-            binding.editTextReservationActivityCode.text.toString()
-        )
-    }
-
     override fun getParkingLotSelected() = binding.editTextReservationActivityParkingNumber.text.toString()
+
+    override fun getEntryDate() = binding.editTextReservationActivityEntry.text.toString()
+
+    override fun getExitDate() = binding.editTextReservationActivityExit.text.toString()
+
+    override fun getKeyCode() = binding.editTextReservationActivityCode.text.toString()
 }

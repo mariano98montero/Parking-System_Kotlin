@@ -21,8 +21,10 @@ interface ParkingReservationContract {
         fun showConfirmationMessage()
         fun showErrorMessage()
         fun closeScreen()
-        fun getDataForReservation(): Reservation
         fun getParkingLotSelected(): String
+        fun getEntryDate(): String
+        fun getExitDate(): String
+        fun getKeyCode(): String
     }
 
     interface ParkingReservationModel {
